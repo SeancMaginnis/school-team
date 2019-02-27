@@ -10,6 +10,7 @@ let teacher = new Schema({
   age: { type: Number },
   subject: { type: String, required: true },
   tenured: { type: Boolean },
+  img: { type: String },
   classroom: { type: ObjectId, ref: "Classroom", virtual: true }
 })
 

@@ -8,6 +8,7 @@ let student = new Schema({
   name: { type: String, required: true },
   grade: { type: Number, required: true },
   age: { type: Number },
+  img: { type: String },
   teacher: { type: ObjectId, ref: "Teacher", virtual: true }
 })
 

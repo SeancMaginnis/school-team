@@ -1,5 +1,5 @@
 let mongoose = require('mongoose')
-// let Classrooms = require('./classroom')
+let Classrooms = require('./classroom')
 let Schema = mongoose.Schema
 
 
@@ -8,8 +8,11 @@ let school = new Schema({
   address: { type: String, required: true },
   type: { type: String },
   capacity: { type: Number },
+  img: { type: String }
   // classrooms: { type: Schema.Types.ObjectId, ref: "Classroom", virtual: true }
 })
+
+
 
 
 module.exports = mongoose.model("School", school)

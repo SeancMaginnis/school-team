@@ -9,7 +9,10 @@ let classroom = new Schema({
   roomNumber: { type: Number, required: true },
   description: { type: String },
   desks: { type: Number },
+  img: { type: String },
   school: { type: ObjectId, ref: "School", virtual: true }
+
+
 
 })
 

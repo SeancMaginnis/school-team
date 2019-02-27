@@ -4,7 +4,7 @@ let express = require('express')
 let bp = require('body-parser')
 let server = express()
 let port = 3000
-// let cors = require('cors')
+let cors = require('cors')
 
 require('./server-assets/db/gearhost-config')
 
@@ -13,15 +13,15 @@ server.use(bp.urlencoded({ extended: true }))
 
 //middleware
 
-// let whitelist = ['http://localhost:8080']
-// let corsOptions = {
-//   origin: function (origin, callback) {
-//     let originIsWhitelisted = whitelist.indexOf(origin) !== -1
-//     callback(null, originIsWhitelisted)
-//   },
-//   credentials: true
-// }
-// server.use(cors(corsOptions))
+let whitelist = ['http://localhost:8080']
+let corsOptions = {
+  origin: function (origin, callback) {
+    let originIsWhitelisted = whitelist.indexOf(origin) !== -1
+    callback(null, originIsWhitelisted)
+  },
+  credentials: true
+}
+server.use(cors(corsOptions))
 
 //routes
 
